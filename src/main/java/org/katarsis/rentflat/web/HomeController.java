@@ -31,11 +31,11 @@ public class HomeController {
 	@RequestMapping(value = "/index", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
 		System.out.println("what the hell");
-		for(Location locationItem: locationsRepos.findAll()){
+		/*for(Location locationItem: locationsRepos.findAll()){
 			Double avgPrice = flatsRepos.findAvgPriceForStantion(locationItem.getDescription());
 			System.out.println(avgPrice);
 			model.addAttribute(locationItem.getDescription().replaceAll(" ", "_").replaceAll("-", "_"), avgPrice);
-		}
+		}*/
 		return "index";
 	}
 	

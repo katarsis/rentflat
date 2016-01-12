@@ -16,9 +16,9 @@
 	<jpa:repositories base-package="org.katarsis.rentflat.repository"/>
 	<context:component-scan base-package="org.katarsis.rentflat.service"></context:component-scan>
 	<import resource="data.xml" />
+	<import resource="spring-security.xml" />
 	<task:annotation-driven/>
 	<bean id="refreshStatisticService" class="org.katarsis.rentflat.service.RefreshStatisticService"></bean>
-	<!-- 
-	<import resource="spring-security.xml" />
-	 -->
+	
+
 </beans>
