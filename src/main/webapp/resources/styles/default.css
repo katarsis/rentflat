@@ -1,0 +1,125 @@
+@CHARSET "UTF-8";
+
+.header {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	min-width: 1000px;
+	background-color: #f5f5f5;
+	border-bottom: 1px solid #e5e5e5;
+	color: #777;
+	font-family: 'Comic Sans MS';
+	background: #87F7A6 -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,0.8)), to(rgba(255,255,255,0)));
+}
+
+.news{
+	font-family: 'Comic Sans MS';
+	width: 100%;
+	color: #777;
+}
+
+.newsArticleBlock{
+	float: left;
+	width: 530px;
+	border: 1px solid #e3e2d8;
+	background: #f9f8ef;
+	padding: 10px 15px;
+	margin-bottom: 20px;
+	border-radius: 15px;
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+	box-shadow: 3px 7px 7px -7px #000;
+	margin: 10px;
+}
+
+.ArticleBlock{
+	border: 1px solid #e3e2d8;
+	background: #f9f8ef;
+	padding: 10px 15px;
+	margin-bottom: 20px;
+	border-radius: 15px;
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+	box-shadow: 3px 7px 7px -7px #000;
+	margin: 10px;
+}
+
+.newsTheme{
+	font-family: 'Comic Sans MS';
+	font-size: 18pt;
+	margin: 10 px;
+}
+
+.newsAuthor{
+	font-family: 'Comic Sans MS';
+	font-size: 12pt;
+	margin-right: 10 px;
+	color: #777;
+}
+
+.newsDate{
+	font-family: 'Comic Sans MS';
+	font-size: 12pt;
+	margin-right: 10 px;
+	color: #777;
+}
+
+
+
+
+.site-footer {
+	clear:both;
+	position: relative;
+	margin-top: 40px;
+	padding-top: 40px;
+	padding-bottom: 40px;
+	font-size: 12px;
+	line-height: 1.5;
+	color: #777;
+	border-top: 1px solid #B2DDB2;
+	width: 1180px;
+	margin-right: auto;
+	margin-left: auto;
+}
+.menu{
+	padding-bottom: 10px;
+}
+
+body {
+	margin: 0px;
+	background-color: #F5F3E3;
+}
+
+.ui-widget-content{
+	background-color: #F5F3E3;
+}
+
+.ui-menu{
+	background: #87F7A6 -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,0.8)), to(rgba(255,255,255,0)));
+}
+
+.ui-button{
+	background: #87F7A6 -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,0.8)), to(rgba(255,255,255,0)));
+}
+
+.ui-widget-header{
+		background: #87F7A6 -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,0.8)), to(rgba(255,255,255,0)));
+}
+
+.ui-button-text{
+		background: #87F7A6 -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,0.8)), to(rgba(255,255,255,0)));
+}
+
+#content{
+	width: 1180px;
+	margin-right: auto;
+	margin-left: auto;
+	padding-top: 10px;
+}
+
+.one{
+	width: 30%; 
+}
+
+.two{
+	width: 70%; 
+}

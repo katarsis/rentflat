@@ -1,0 +1,18 @@
+<div id="menu" xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:spring="http://www.springframework.org/tags"
+	xmlns:security="http://www.springframework.org/security/tags"
+	version="2.0">
+	<jsp:directive.page contentType="text/html;charset=UTF-8" />
+	<jsp:output omit-xml-declaration="yes" />
+	<div class="container">
+		<nav class="navbar navbar-default">
+			<div class="container-fluid"></div>
+			<a class="navbar-brand" href="#">Edelweiss</a>
+			<ul class="nav navbar-nav navbar-right">
+		           	<li><a href="/sprint2/edit_profile"><span class="glyphicon glyphicon-user"><jsp:text/></span>   <security:authentication property="principal.username" /></a></li>
+					<li><a href="/sprint2/logout"><span class="glyphicon glyphicon-log-out"><jsp:text/></span>   Logout</a></li>
+					<li><a href="/sprint2/createArticle"><span class="glyphicon glyphicon-paperclip"><jsp:text/></span>   Articles</a></li>
+	      	</ul>
+		</nav>
+	</div>
+</div>
