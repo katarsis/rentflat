@@ -29,7 +29,7 @@ public class HomeController {
 	FlatRepository flatsRepos;
 	
 	@RequestMapping(value = "/index", method = RequestMethod.GET)
-	public String home(Locale locale, Model model) {
+	public String index(Locale locale, Model model) {
 		System.out.println("what the hell");
 		/*for(Location locationItem: locationsRepos.findAll()){
 			Double avgPrice = flatsRepos.findAvgPriceForStantion(locationItem.getDescription());
@@ -38,6 +38,13 @@ public class HomeController {
 		}*/
 		return "index";
 	}
+	
+	@RequestMapping(value = "/standart/rentmap", method = RequestMethod.GET)
+	public String rentmap(Locale locale, Model model) {
+		System.out.println("in rent");
+		return "standart/rentmap";
+	}
+	
 	
 	@RequestMapping(value = "/refresh", method = RequestMethod.GET)
 	public void demoServiceMethod()

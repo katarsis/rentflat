@@ -7,11 +7,17 @@
 	<div class="container">
 		<nav class="navbar navbar-default">
 			<div class="container-fluid"></div>
-			<a class="navbar-brand" href="#">Edelweiss</a>
+			<ul class="nav navbar-nav navbar-left">
+				<li><a class="navbar-brand" href="#"><span class="glyphicon glyphicon-home"></span> RentFlat</a></li>
+			</ul>
 			<ul class="nav navbar-nav navbar-right">
-		           	<li><a href="/sprint2/edit_profile"><span class="glyphicon glyphicon-user"><jsp:text/></span>   <security:authentication property="principal.username" /></a></li>
-					<li><a href="/sprint2/logout"><span class="glyphicon glyphicon-log-out"><jsp:text/></span>   Logout</a></li>
-					<li><a href="/sprint2/createArticle"><span class="glyphicon glyphicon-paperclip"><jsp:text/></span>   Articles</a></li>
+				<security:authorize access ="isAnonymous()">
+			       	<li><a href="${pageContext.request.contextPath}/registration"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+		        	<li><a href="${pageContext.request.contextPath}/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+		        </security:authorize>
+		        <security:authorize access ="hasRole('ROLE_USER')">
+		        	<li><a href="${pageContext.request.contextPath}/edit_profile"><span class="glyphicon glyphicon-user"></span>   </a></li>
+		        </security:authorize>	
 	      	</ul>
 		</nav>
 	</div>

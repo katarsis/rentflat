@@ -34,7 +34,7 @@ public class RegistrationController {
 	@RequestMapping(value = "/registration", method = RequestMethod.POST)
 	public String doRegistration(@ModelAttribute ("user") UserAccount user, BindingResult result){
 		List<Role> userDefaultRole = new ArrayList<Role>();
-		Role defaultRole = roleRepository.getRoleById("1");
+		Role defaultRole = roleRepository.getRoleById(1);
 		userDefaultRole.add(defaultRole);
 		user.setRoles(userDefaultRole);
 		userAccountRepository.save(user);

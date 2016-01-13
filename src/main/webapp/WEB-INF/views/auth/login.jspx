@@ -9,20 +9,28 @@
 	<title>Home</title>
 </head>
 <div class="container">
+<div class="login_container">
   <h2>Login page</h2>
-  <form role="form" method="post" action="/sprint2/j_spring_security_check">
+  	<c:if test="${not empty param.error}">
+		<div class="alert alert-danger">
+		  <strong>Error!</strong> We could't find you account 
+		</div>
+	</c:if>
+  <form role="form" method="post" action="${pageContext.request.contextPath}/j_spring_security_check">
     <div class="form-group">
       <label for="login">Login:</label>
-      <input type="text" class="form-control" id="login" placeholder="Enter login" name="j_username"></input>
+      <input type="text" class="form-control" id="username" placeholder="Enter login" name="username"></input>
     </div>
     <div class="form-group">
       <label for="pwd">Password:</label>
-      <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="j_password"></input>
+      <input type="password" class="form-control" id="password" placeholder="Enter password" name="password"></input>
     </div>
     <div class="checkbox">
       <label><input type="checkbox" name="_spring_security_remember_me"></input> Remember me</label>
     </div>
     <button type="submit" class="btn btn-default">Login</button>
+    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
   </form>
+</div>
 </div>
 </div>

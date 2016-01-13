@@ -13,7 +13,7 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <org.springframework-version>4.1.9.RELEASE</org.springframework-version>
-        <org.springframework-security>4.0.3.RELEASE</org.springframework-security>
+        <org.springframework-security>4.0.2.RELEASE</org.springframework-security>
         <hibernate.version>4.3.5.Final</hibernate.version>
     </properties>
     
@@ -70,6 +70,12 @@
             <version>9.3-1102-jdbc41</version>
              <scope>provided</scope>
         </dependency>
+        <!-- Database -->
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<version>1.4.190</version>
+		</dependency>
         <!-- Hibernate -->
 		<dependency>
 		    <groupId>org.hibernate</groupId>

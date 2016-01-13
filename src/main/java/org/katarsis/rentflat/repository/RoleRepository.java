@@ -9,5 +9,5 @@ import org.springframework.data.jpa.repository.Query;
 public interface RoleRepository extends JpaRepository<UserAccount, Integer>{
 
 	@Query("FROM Role where id = ?1")
-	Role getRoleById(String idRole);
+	Role getRoleById(int idRole);
 }
