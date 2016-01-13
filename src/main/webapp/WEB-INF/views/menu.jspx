@@ -8,7 +8,7 @@
 		<nav class="navbar navbar-default">
 			<div class="container-fluid"></div>
 			<ul class="nav navbar-nav navbar-left">
-				<li><a class="navbar-brand" href="#"><span class="glyphicon glyphicon-home"></span> RentFlat</a></li>
+				<li><a class="navbar-brand" href="${pageContext.request.contextPath}/index"><span class="glyphicon glyphicon-home"></span> RentFlat</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<security:authorize access ="isAnonymous()">
@@ -16,7 +16,11 @@
 		        	<li><a href="${pageContext.request.contextPath}/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
 		        </security:authorize>
 		        <security:authorize access ="hasRole('ROLE_USER')">
-		        	<li><a href="${pageContext.request.contextPath}/edit_profile"><span class="glyphicon glyphicon-user"></span>   </a></li>
+		        	<li><a href="${pageContext.request.contextPath}/standart/rentmap"><span class="glyphicon glyphicon-globe"></span> <span style="font-family: Helvetica Neue,Helvetica,Arial,sans-serif"> Statistic map</span>  </a></li>
+		        </security:authorize>
+		        <security:authorize access="hasRole('ROLE_ADMIN')">
+		        	<li><a href="${pageContext.request.contextPath}/administration/tasks"><span class="glyphicon glyphicon-file"></span> <span style="font-family: Helvetica Neue,Helvetica,Arial,sans-serif"> Task list </span></a></li>
+		        	<li><a href="${pageContext.request.contextPath}/administration/manage"><span class="glyphicon glyphicon-pencil"></span> <span style="font-family: Helvetica Neue,Helvetica,Arial,sans-serif"> Manage tasks </span></a></li>
 		        </security:authorize>	
 	      	</ul>
 		</nav>

@@ -6,6 +6,14 @@
 	    <put-attribute name="menu" value="/WEB-INF/views/menu.jspx" />
 		<put-attribute name="body" value="/WEB-INF/views/standart/pricemap.jspx" />
 	</definition>
+	<definition extends="default" name="administration/tasks">
+	    <put-attribute name="menu" value="/WEB-INF/views/menu.jspx" />
+		<put-attribute name="body" value="/WEB-INF/views/administration/tasks.jspx" />
+	</definition>
+	<definition extends="default" name="administration/manage">
+	    <put-attribute name="menu" value="/WEB-INF/views/menu.jspx" />
+		<put-attribute name="body" value="/WEB-INF/views/administration/manage.jspx" />
+	</definition>
 	<definition extends="default" name="index">
 	    <put-attribute name="menu" value="/WEB-INF/views/menu.jspx" />
 		<put-attribute name="body" value="/WEB-INF/views/index.jspx" />
