@@ -1,14 +1,18 @@
 package org.katarsis.rentflat.service;
 
 import java.io.IOException;
+import java.sql.Timestamp;
+import java.util.Date;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.katarsis.rentflat.entities.Flat;
+import org.katarsis.rentflat.entities.JobLog;
 import org.katarsis.rentflat.entities.Location;
 import org.katarsis.rentflat.repository.FlatRepository;
+import org.katarsis.rentflat.repository.JobLogRepository;
 import org.katarsis.rentflat.repository.LocationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -18,22 +22,41 @@ import com.google.gson.JsonParser;
 
 public class RefreshStatisticService {
 
+	public enum OperationType {BUY,RENT}
+	
+	
 	@Autowired
     static FlatRepository repos;
 	@Autowired
 	static LocationRepository locationRepo;
+	@Autowired
+	static JobLogRepository jobRepo;
 	
 	@Scheduled(cron="0 21 21 11 * ?")
 	public void demoCron(){
-		refreshStatistic();
+		refreshStatistic(OperationType.BUY,1);
+		refreshStatistic(OperationType.BUY,2);
+		refreshStatistic(OperationType.RENT,1);
+		refreshStatistic(OperationType.RENT,2);
 	}
 	
-    public static void refreshStatistic()
+    public static void refreshStatistic(OperationType operationType, int flatCount)
     {
 		Document doc;
+		System.setProperty("https.proxyHost", "proxy2.gksm.local");
+		System.setProperty("https.proxyPort", "443");
 		try {
-			
-			String defaultUrlAddress = "https://www.avito.ru/moskva/kvartiry/sdam/na_dlitelnyy_srok/2-komnatnye";
+			String baseUrl = "https://www.avito.ru/moskva/kvartiry/";
+			if(operationType == OperationType.BUY && flatCount ==1){
+				baseUrl+="/prodam/1-komnatnye/vtorichka";
+			}else if(operationType == OperationType.BUY && flatCount ==2){
+				baseUrl+="/prodam/2-komnatnye/vtorichka";
+			}else if(operationType == OperationType.RENT && flatCount ==1){
+				baseUrl+="/sdam/na_dlitelnyy_srok/1-komnatnye";
+			}else if(operationType == OperationType.RENT && flatCount ==2){
+				baseUrl+="/sdam/na_dlitelnyy_srok/2-komnatnye";
+			}
+			String defaultUrlAddress = baseUrl;
 			doc = Jsoup.connect(defaultUrlAddress).get();
 			String endPage = "";
 			// find last page index
@@ -84,7 +107,9 @@ public class RefreshStatisticService {
 					newFlat.setDistantion(destantionInMetrs.intValue());
 					newFlat.setPrice(Integer.parseInt(priceString));
 					newFlat.setLocation(location);
-					
+					newFlat.setRoom_count(flatCount);
+					Timestamp currentDate = new Timestamp((new Date()).getTime());
+					newFlat.setDateCreation(currentDate);
 					repos.saveAndFlush(newFlat);
 					}catch(Exception es){
 						System.out.println("ERROR: "+flat.text());
@@ -92,7 +117,15 @@ public class RefreshStatisticService {
 					}
 				}
 			}
-
+			JobLog finishedJob = new JobLog();
+			finishedJob.setDateRunning(new Date());
+			if(operationType==OperationType.BUY){
+				finishedJob.setOperationType("refresh buying info");
+			}else if(operationType == OperationType.RENT){
+				finishedJob.setOperationType("refresh rent info");
+			}
+			finishedJob.setParameters("flat room: "+flatCount);
+			jobRepo.save(finishedJob);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
