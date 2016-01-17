@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.sql.Timestamp;
 import java.util.Date;
 
+import org.hibernate.jpa.criteria.expression.BinaryArithmeticOperation.Operation;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -16,21 +17,23 @@ import org.katarsis.rentflat.repository.JobLogRepository;
 import org.katarsis.rentflat.repository.LocationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.stereotype.Repository;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
+@Repository
 public class RefreshStatisticService {
 
 	public enum OperationType {BUY,RENT}
 	
 	
 	@Autowired
-    static FlatRepository repos;
+    FlatRepository repos;
 	@Autowired
-	static LocationRepository locationRepo;
+	LocationRepository locationRepo;
 	@Autowired
-	static JobLogRepository jobRepo;
+	JobLogRepository jobRepo;
 	
 	@Scheduled(cron="0 21 21 11 * ?")
 	public void demoCron(){
@@ -40,13 +43,12 @@ public class RefreshStatisticService {
 		refreshStatistic(OperationType.RENT,2);
 	}
 	
-    public static void refreshStatistic(OperationType operationType, int flatCount)
+    public void refreshStatistic(OperationType operationType, int flatCount)
     {
 		Document doc;
-		System.setProperty("https.proxyHost", "proxy2.gksm.local");
-		System.setProperty("https.proxyPort", "443");
+		
 		try {
-			String baseUrl = "https://www.avito.ru/moskva/kvartiry/";
+			String baseUrl = "https://www.avito.ru/moskva/kvartiry";
 			if(operationType == OperationType.BUY && flatCount ==1){
 				baseUrl+="/prodam/1-komnatnye/vtorichka";
 			}else if(operationType == OperationType.BUY && flatCount ==2){
@@ -77,14 +79,19 @@ public class RefreshStatisticService {
 					
 					try{
 					Element price = flat.select("div.popup-prices").first();
-					JsonObject jsonCurrencyMeta = new JsonParser().parse(price.attr("data-prices").substring(1,price.attr("data-prices").length()-1)).getAsJsonObject();
+					JsonObject jsonCurrencyMeta = null;
+					if(operationType == OperationType.BUY){
+						jsonCurrencyMeta = new JsonParser().parse(price.attr("data-prices").substring(1,price.attr("data-prices").length()-1).split("}},")[0]+"}}").getAsJsonObject();
+					}else {
+						jsonCurrencyMeta = new JsonParser().parse(price.attr("data-prices").substring(1,price.attr("data-prices").length()-1)).getAsJsonObject();
+					}
 					JsonObject jsonPrice = (JsonObject) jsonCurrencyMeta.get("currencies");
 					String priceString = jsonPrice.get("RUB").getAsString(); 
 					
 					Element stantion = flat.select("p.address").first();
 					String stantionWithDest = stantion.text().split(",")[0];
 					String stantionStr = stantionWithDest.split("\\d+")[0];	
-					String destantionStr = stantion.select("span.c-2").first().text();
+					String  destantionStr = stantion.select("span.c-2").first().text();
 					//String destantionStrDesc = stantion.select("span.c-2").first().text().split("\\d+")[0];
 					Double destantionInMetrs = Double.valueOf(destantionStr.split(" ")[0].replaceAll("\\+", ""));
 					if(destantionStr.contains("км")){
@@ -108,6 +115,11 @@ public class RefreshStatisticService {
 					newFlat.setPrice(Integer.parseInt(priceString));
 					newFlat.setLocation(location);
 					newFlat.setRoom_count(flatCount);
+					if(operationType==OperationType.BUY){
+						newFlat.setOperationType("buy");
+					}else if(operationType == OperationType.RENT){
+						newFlat.setOperationType("rent");
+					}
 					Timestamp currentDate = new Timestamp((new Date()).getTime());
 					newFlat.setDateCreation(currentDate);
 					repos.saveAndFlush(newFlat);

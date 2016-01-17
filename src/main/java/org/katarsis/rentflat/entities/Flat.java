@@ -29,6 +29,8 @@ public class Flat implements Serializable{
 	private Integer room_count;
 	private Integer price;
 	private Integer distantion;
+	@Column(name="operation_type")
+	private String operationType;
 	@Column(name="date_creation")
 	private Timestamp dateCreation;
 	
@@ -82,6 +84,14 @@ public class Flat implements Serializable{
 
 	public void setDateCreation(Timestamp dateCreation) {
 		this.dateCreation = dateCreation;
+	}
+
+	public String getOperationType() {
+		return operationType;
+	}
+
+	public void setOperationType(String operationType) {
+		this.operationType = operationType;
 	}
 
 	

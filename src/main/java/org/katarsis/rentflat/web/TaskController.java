@@ -2,9 +2,7 @@ package org.katarsis.rentflat.web;
 
 import java.util.Locale;
 
-import org.katarsis.rentflat.repository.FlatRepository;
 import org.katarsis.rentflat.repository.JobLogRepository;
-import org.katarsis.rentflat.repository.LocationRepository;
 import org.katarsis.rentflat.service.RefreshStatisticService;
 import org.katarsis.rentflat.service.RefreshStatisticService.OperationType;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,11 +16,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class TaskController {
 	
 	@Autowired
-	LocationRepository locationsRepos;
-	@Autowired
-	FlatRepository flatsRepos;
-	@Autowired
 	JobLogRepository taskRepository;
+	@Autowired
+	RefreshStatisticService refreshStatisticService;
 
 	@RequestMapping(value="administration/tasks",method=RequestMethod.GET)
 	public String showTaskLog(Locale locale, Model model){
@@ -37,10 +33,21 @@ public class TaskController {
 	}
 	
 	@RequestMapping(value = "administration/refreshrent", method = RequestMethod.GET)
+	public void refreshRent(@RequestParam("flat") String flatCount)
+    {
+		try{
+			refreshStatisticService.refreshStatistic(OperationType.RENT, Integer.parseInt(flatCount));
+		}catch(Exception exp){
+			exp.printStackTrace();
+		}
+	
+    }
+	
+	@RequestMapping(value = "administration/refreshprice", method = RequestMethod.GET)
 	public void demoServiceMethod(@RequestParam("flat") String flatCount)
     {
 		try{
-			RefreshStatisticService.refreshStatistic(OperationType.RENT, Integer.parseInt(flatCount));
+			refreshStatisticService.refreshStatistic(OperationType.BUY, Integer.parseInt(flatCount));
 		}catch(Exception exp){
 			exp.printStackTrace();
 		}
