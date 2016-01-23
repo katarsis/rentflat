@@ -8,8 +8,7 @@
 <head>
 	<title>Task</title>
 </head>
-	<div class="container">
-		<div class="container">
+
 		<h2>Run task</h2>
 		<div class="container-fluid">
 			<div class="row" >
@@ -28,7 +27,6 @@
 				<div class="col-sm-4" style="padding: 6px 12px;">Refresh price info 2 flat</div>
 				<div class="col-sm-4"><a href="${pageContext.request.contextPath}/administration/refreshprice?flat=2" class="btn btn-default">Refresh info</a></div>
 			</div>
-		</div>
-		</div>
+
 	</div>
 </div>

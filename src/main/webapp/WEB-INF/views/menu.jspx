@@ -4,7 +4,6 @@
 	version="2.0">
 	<jsp:directive.page contentType="text/html;charset=UTF-8" />
 	<jsp:output omit-xml-declaration="yes" />
-	<div class="container">
 		<nav class="navbar navbar-default">
 			<div class="container-fluid"></div>
 			<ul class="nav navbar-nav navbar-left">
@@ -16,13 +15,25 @@
 		        	<li><a href="${pageContext.request.contextPath}/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
 		        </security:authorize>
 		        <security:authorize access ="hasRole('ROLE_USER')">
-		        	<li><a href="${pageContext.request.contextPath}/standart/rentmap"><span class="glyphicon glyphicon-globe"></span> <span style="font-family: Helvetica Neue,Helvetica,Arial,sans-serif"> Statistic map</span>  </a></li>
+            		<li><a href="${pageContext.request.contextPath}/standart/rentmap"><span class="glyphicon glyphicon-globe"></span> <span style="font-family: Helvetica Neue,Helvetica,Arial,sans-serif"> Statistic map</span>  </a></li>
 		        </security:authorize>
 		        <security:authorize access="hasRole('ROLE_ADMIN')">
-		        	<li><a href="${pageContext.request.contextPath}/administration/tasks"><span class="glyphicon glyphicon-file"></span> <span style="font-family: Helvetica Neue,Helvetica,Arial,sans-serif"> Task list </span></a></li>
-		        	<li><a href="${pageContext.request.contextPath}/administration/manage"><span class="glyphicon glyphicon-pencil"></span> <span style="font-family: Helvetica Neue,Helvetica,Arial,sans-serif"> Manage tasks </span></a></li>
+		        	<li class="dropdown">
+		        		 <a class="glyphicon glyphicon-file dropdown-toggle" data-toggle="dropdown" href="#"><span style="font-family: Helvetica Neue,Helvetica,Arial,sans-serif">Manage tasks </span> <span class="caret"></span></a>
+		          		 <ul class="dropdown-menu">
+					      <li><a href="${pageContext.request.contextPath}/administration/tasks">Finished task</a></li>
+					      <li><a href="${pageContext.request.contextPath}/administration/manage">Start taks</a></li>
+					    </ul>
+				    </li>
+				    <li class="dropdown">
+		        		 <a class="glyphicon glyphicon-user dropdown-toggle" data-toggle="dropdown" href="#"><span style="font-family: Helvetica Neue,Helvetica,Arial,sans-serif"> Manage users </span> <span class="caret"></span></a>
+		          		 <ul class="dropdown-menu">
+					      <li><a href="${pageContext.request.contextPath}/administration/users">User list</a></li>
+					      <li><a href="${pageContext.request.contextPath}/administration/roles">Role list</a></li>
+					      <li><a href="${pageContext.request.contextPath}/administration/profile">Edit profile</a></li>
+					    </ul>
+				    </li>
 		        </security:authorize>	
 	      	</ul>
 		</nav>
-	</div>
 </div>

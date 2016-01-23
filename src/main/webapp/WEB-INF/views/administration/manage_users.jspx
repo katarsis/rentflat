@@ -6,24 +6,24 @@
 <jsp:directive.page contentType="text/html;charset=UTF-8"/>
 <jsp:output omit-xml-declaration="yes"/>
 <head>
-	<title>Task</title>
+	<title>Users</title>
 </head>
 		<div class="login_container">
-		  <h2>Finished task</h2>
+		  <h2>Rgistred users</h2>
 		  <table class="table table-striped">
 		    <thead>
 		      <tr>
-		        <th>Operation type</th>
-		        <th>Parameters list</th>
-		        <th>Date execution</th>
+		        <th>User name</th>
+		        <th>User email</th>
+		        <th>User roles</th>
 		      </tr>
 		    </thead>
 		    <tbody>
-		    	<c:forEach items="${tasks}" var="task">
+		    	<c:forEach items="${users}" var="user">
 				   <tr>
-				       <td>${task.operationType}</td>
-				       <td>${task.parameters}</td>
-				       <td>${task.dateRunning}</td>
+				       <td>${user.userLogin}</td>
+				       <td>${user.userEmail}</td>
+				       <td>${user.roles}</td>
 				    </tr>
 				</c:forEach>
 		    </tbody>

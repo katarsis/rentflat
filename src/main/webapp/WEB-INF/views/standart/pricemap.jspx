@@ -24,7 +24,7 @@ flatTypeSelect.onchange = function() {
     };
 };
 </script>
-<section class='container'>
+<section>
 		<div class ="jumbotron">	
 			<h1>Welcome to Rent Flat project!</h1>
 			<p> We provided information about average rent prices</p>
@@ -251,12 +251,12 @@ flatTypeSelect.onchange = function() {
 			<div id="point_2_18" id_metro="37" class="point_wrap activ_point" title="Орехово" style="border-width: 5px; background: rgb(81, 187, 102);">
 						<div id="name_2_18" class="name_metro metro_line_2" style="font-size: 80%; color: rgb(81, 187, 102); background: rgb(255, 255, 255);">${Орехово}</div>
 			</div>
-			<!-- <div id="point_2_19" id_metro="38" class="point_wrap  povorot-45 activ_point" title="Домодедовская" style="border-width: 5px; background: rgb(81, 187, 102);">
-						<div id="name_2_19" class="name_metro povorot45 metro_line_2" style="font-size: 80%; color: rgb(81, 187, 102); background: rgb(255, 255, 255);">${Домодедовская)</div>
+			<div id="point_2_19" id_metro="38" class="point_wrap  povorot-45 activ_point" title="Домодедовская" style="border-width: 5px; background: rgb(81, 187, 102);">
+						<div id="name_2_19" class="name_metro povorot45 metro_line_2" style="font-size: 80%; color: rgb(81, 187, 102); background: rgb(255, 255, 255);">${Домодедовская}</div>
 			</div>
 			<div id="point_2_20" id_metro="39" class="point_wrap  line_2_circul noactiv_point" title="Красногвардейская" style="border-width: 5px;">
 						<div id="name_2_20" class="name_metro metro_line_2" style="font-size: 80%;">${Красногвардейская}</div>
-			</div>-->
+			</div>
 			<div id="point_2_21" id_metro="174" class="point_wrap  povorot90 noactiv_point" title="Алма-Атинская" style="border-width: 5px;">
 						<div id="name_2_21" class="name_metro povorot-90 metro_line_2" style="font-size: 80%;">${Алма_Атинская}</div>
 			</div>
@@ -536,273 +536,109 @@ flatTypeSelect.onchange = function() {
 			<div id="point_7_21" id_metro="194" class="point_wrap noactiv_point" title="Жулебино" style="border-width: 5px;">
 						<div id="name_7_21" class="name_metro metro_line_7" style="font-size: 80%;">${Жулебино}</div>
 		    </div>
-			<!--  <div id="point_7_22" id_metro="195" class="point_wrap noactiv_point" title="Котельники" style="border-width: 5px;">
-						<div id="name_7_22" class="name_metro metro_line_7" style="font-size: 80%;">Котельники</div>
-				
-				<div id="otel_7_22" class="list_otel">
-				
-													</div>
-				<div class="colorText line_7"></div>
+			 <div id="point_7_22" id_metro="195" class="point_wrap noactiv_point" title="Котельники" style="border-width: 5px;">
+						<div id="name_7_22" class="name_metro metro_line_7" style="font-size: 80%;">${Котельники}</div>
 		    </div>
 			<div id="point_8_1" id_metro="196" class="point_wrap noactiv_point" title="Новокосино" style="border-width: 5px;">
-						<div id="name_8_1" class="name_metro metro_line_8" style="font-size: 80%;">Новокосино</div>
-				
-				<div id="otel_8_1" class="list_otel">
-				
-													</div>
-				<div class="colorText line_8"></div>
+						<div id="name_8_1" class="name_metro metro_line_8" style="font-size: 80%;">${Новокосино}</div>
 		    </div>
 			<div id="point_8_2" id_metro="122" class="point_wrap noactiv_point" title="Новогиреево" style="border-width: 5px;">
-						<div id="name_8_2" class="name_metro metro_line_8" style="font-size: 80%;">Новогиреево</div>
-				
-				<div id="otel_8_2" class="list_otel">
-				
-						</div>
-				<div class="colorText line_8"></div>
+						<div id="name_8_2" class="name_metro metro_line_8" style="font-size: 80%;">${Новогиреево}</div>
 		    </div>
 			<div id="point_8_3" id_metro="123" class="point_wrap noactiv_point" title="Перово" style="border-width: 5px;">
-						<div id="name_8_3" class="name_metro metro_line_8" style="font-size: 80%;">Перово</div>
-				
-				<div id="otel_8_3" class="list_otel">
-				
-																											</div>
-				<div class="colorText line_8"></div>
+						<div id="name_8_3" class="name_metro metro_line_8" style="font-size: 80%;">${Перово}</div>
 		    </div>
 			<div id="point_8_4" id_metro="124" class="point_wrap noactiv_point" title="Шоссе Энтузиастов" style="border-width: 5px;">
-						<div id="name_8_4" class="name_metro metro_line_8" style="font-size: 80%;">Шоссе&nbsp;Энтузиастов</div>
-				
-				<div id="otel_8_4" class="list_otel">
-				
-																																		</div>
-				<div class="colorText line_8"></div>
+						<div id="name_8_4" class="name_metro metro_line_8" style="font-size: 80%;">${Шоссе_Энтузиастов}</div>
 		    </div>
 			<div id="point_8_5" id_metro="125" class="point_wrap  povorot45 noactiv_point" title="Авиамоторная" style="border-width: 5px;">
-						<div id="name_8_5" class="name_metro povorot-45 metro_line_8" style="font-size: 80%;">Авиамоторная</div>
-				
-				<div id="otel_8_5" class="list_otel">
-				
-																																																																					</div>
-				<div class="colorText line_8"></div>
+						<div id="name_8_5" class="name_metro povorot-45 metro_line_8" style="font-size: 80%;">${Авиамоторная}</div>
 		    </div>
 			<div id="point_8_6" id_metro="126" class="point_wrap  line_8_circul noactiv_point" title="Площадь Ильича" style="border-width: 5px;">
-						<div id="name_8_6" class="name_metro metro_line_8" style="font-size: 80%;">Площадь&nbsp;Ильича</div>
-				
-				<div id="otel_8_6" class="list_otel">
-				
-																																																														</div>
-				<div class="colorText line_8"></div>
+						<div id="name_8_6" class="name_metro metro_line_8" style="font-size: 80%;">${Площадь_Ильича}</div>
 		    </div>
 			<div id="point_8_7" id_metro="127" class="point_wrap  line_8_circul noactiv_point" title="Марксистская" style="border-width: 5px;">
-						<div id="name_8_7" class="name_metro metro_line_8" style="font-size: 80%;">Марксистская</div>
-				
-				<div id="otel_8_7" class="list_otel">
-				
-																																																																												</div>
-				<div class="colorText line_8"></div>
+						<div id="name_8_7" class="name_metro metro_line_8" style="font-size: 80%;">${Марксистская}</div>
 		    </div>
 			<div id="point_8_8" id_metro="128" class="point_wrap  line_8_circul noactiv_point" title="Третьяковская" style="border-width: 5px;">
-						<div id="name_8_8" class="name_metro metro_line_8" style="font-size: 80%;">Третьяковская</div>
-				
-				<div id="otel_8_8" class="list_otel">
-				
-																																																																																																								</div>
-				<div class="colorText line_8"></div>
+						<div id="name_8_8" class="name_metro metro_line_8" style="font-size: 80%;">${Третьяковская}</div>
 		    </div>
 			<div id="point_9_1" id_metro="129" class="point_wrap noactiv_point" title="Алтуфьево" style="border-width: 5px;">
-						<div id="name_9_1" class="name_metro metro_line_9" style="font-size: 80%;">Алтуфьево</div>
-				
-				<div id="otel_9_1" class="list_otel">
-				
-																																									</div>
-				<div class="colorText line_9"></div>
+						<div id="name_9_1" class="name_metro metro_line_9" style="font-size: 80%;">${Алтуфьево}</div>
 		    </div>
 			<div id="point_9_2" id_metro="130" class="point_wrap noactiv_point" title="Бибирево" style="border-width: 5px;">
-						<div id="name_9_2" class="name_metro metro_line_9" style="font-size: 80%;">Бибирево</div>
-				
-				<div id="otel_9_2" class="list_otel">
-				
-																											</div>
-				<div class="colorText line_9"></div>
+						<div id="name_9_2" class="name_metro metro_line_9" style="font-size: 80%;">${Бибирево}</div>
 		    </div>
 			<div id="point_9_3" id_metro="131" class="point_wrap noactiv_point" title="Отрадное" style="border-width: 5px;">
-						<div id="name_9_3" class="name_metro metro_line_9" style="font-size: 80%;">Отрадное</div>
-				
-				<div id="otel_9_3" class="list_otel">
-				
-													</div>
-				<div class="colorText line_9"></div>
+						<div id="name_9_3" class="name_metro metro_line_9" style="font-size: 80%;">${Отрадное}</div>
 		    </div>
 			<div id="point_9_4" id_metro="132" class="point_wrap noactiv_point" title="Владыкино" style="border-width: 5px;">
-						<div id="name_9_4" class="name_metro metro_line_9" style="font-size: 80%;">Владыкино</div>
-				
-				<div id="otel_9_4" class="list_otel">
-				
-																																																																												</div>
-				<div class="colorText line_9"></div>
+						<div id="name_9_4" class="name_metro metro_line_9" style="font-size: 80%;">${Владыкино}</div>
 		    </div>
 			<div id="point_9_5" id_metro="133" class="point_wrap noactiv_point" title="Петровско-Разумовская" style="border-width: 5px;">
-						<div id="name_9_5" class="name_metro metro_line_9" style="font-size: 80%;">Петровско‑Разумовская</div>
-				
-				<div id="otel_9_5" class="list_otel">
-				
-																																																														</div>
-				<div class="colorText line_9"></div>
+						<div id="name_9_5" class="name_metro metro_line_9" style="font-size: 80%;">${Петровско_Разумовская}</div>
 		    </div>
 			<div id="point_9_6" id_metro="134" class="point_wrap noactiv_point" title="Тимирязевская" style="border-width: 5px;">
-						<div id="name_9_6" class="name_metro metro_line_9" style="font-size: 80%;">Тимирязевская</div>
-				
-				<div id="otel_9_6" class="list_otel">
-				
-																																									</div>
-				<div class="colorText line_9"></div>
+						<div id="name_9_6" class="name_metro metro_line_9" style="font-size: 80%;">${Тимирязевская}</div>
 		    </div>
 			<div id="point_9_7" id_metro="135" class="point_wrap noactiv_point" title="Дмитровская" style="border-width: 5px;">
-						<div id="name_9_7" class="name_metro metro_line_9" style="font-size: 80%;">Дмитровская</div>
-				
-				<div id="otel_9_7" class="list_otel">
-				
-																											</div>
-				<div class="colorText line_9"></div>
+						<div id="name_9_7" class="name_metro metro_line_9" style="font-size: 80%;">${Дмитровская}</div>
 		    </div>
 			<div id="point_9_8" id_metro="136" class="point_wrap noactiv_point" title="Савеловская" style="border-width: 5px;">
-						<div id="name_9_8" class="name_metro metro_line_9" style="font-size: 80%;">Савеловская</div>
-				
-				<div id="otel_9_8" class="list_otel">
-				
-																																		</div>
-				<div class="colorText line_9"></div>
+						<div id="name_9_8" class="name_metro metro_line_9" style="font-size: 80%;">${Савеловская}</div>
 		    </div>
 			<div id="point_9_9" id_metro="137" class="point_wrap  line_9_circul noactiv_point" title="Менделеевская" style="border-width: 5px;">
-						<div id="name_9_9" class="name_metro metro_line_9" style="font-size: 80%;">Менделеевская</div>
-				
-				<div id="otel_9_9" class="list_otel">
-				
-																																																																												</div>
-				<div class="colorText line_9"></div>
+						<div id="name_9_9" class="name_metro metro_line_9" style="font-size: 80%;">${Менделеевская}</div>
 		    </div>
 			<div id="point_9_10" id_metro="138" class="point_wrap  line_9_circul noactiv_point" title="Цветной бульвар" style="border-width: 5px;">
-						<div id="name_9_10" class="name_metro metro_line_9" style="font-size: 80%;">Цветной&nbsp;бульвар</div>
-				
-				<div id="otel_9_10" class="list_otel">
-				
-																																																																																																																																				</div>
-				<div class="colorText line_9"></div>
+						<div id="name_9_10" class="name_metro metro_line_9" style="font-size: 80%;">${Цветной_бульвар}</div>
 		    </div>
 			<div id="point_9_11" id_metro="139" class="point_wrap  line_9_circul noactiv_point" title="Чеховская" style="border-width: 5px;">
-						<div id="name_9_11" class="name_metro metro_line_9" style="font-size: 80%;">Чеховская</div>
-				
-				<div id="otel_9_11" class="list_otel">
-				
-																																																																																																																																																																																																																																																																																																																																																																																																																																			</div>
-				<div class="colorText line_9"></div>
+						<div id="name_9_11" class="name_metro metro_line_9" style="font-size: 80%;">${Чеховская}</div>
 		    </div>
 			<div id="point_9_12" id_metro="140" class="point_wrap  line_9_circul noactiv_point" title="Боровицкая" style="border-width: 5px;">
-						<div id="name_9_12" class="name_metro metro_line_9" style="font-size: 80%;">Боровицкая</div>
-				
-				<div id="otel_9_12" class="list_otel">
-				
-																																																																																																															</div>
-				<div class="colorText line_9"></div>
+						<div id="name_9_12" class="name_metro metro_line_9" style="font-size: 80%;">${Боровицкая}</div>
 		    </div>
 			<div id="point_9_13" id_metro="141" class="point_wrap noactiv_point" title="Полянка" style="border-width: 5px;">
-						<div id="name_9_13" class="name_metro metro_line_9" style="font-size: 80%;">Полянка</div>
-				
-				<div id="otel_9_13" class="list_otel">
-				
-																																																																																																																						</div>
-				<div class="colorText line_9"></div>
+						<div id="name_9_13" class="name_metro metro_line_9" style="font-size: 80%;">${Полянка}</div>
 		    </div>
 			<div id="point_9_14" id_metro="142" class="point_wrap  line_9_circul noactiv_point" title="Серпуховская" style="border-width: 5px;">
-						<div id="name_9_14" class="name_metro metro_line_9" style="font-size: 80%;">Серпуховская</div>
-				
-				<div id="otel_9_14" class="list_otel">
-				
-																																																																																										</div>
-				<div class="colorText line_9"></div>
+						<div id="name_9_14" class="name_metro metro_line_9" style="font-size: 80%;">${Серпуховская}</div>
 		    </div>
 			<div id="point_9_15" id_metro="143" class="point_wrap noactiv_point" title="Тульская" style="border-width: 5px;">
-						<div id="name_9_15" class="name_metro metro_line_9" style="font-size: 80%;">Тульская</div>
-				
-				<div id="otel_9_15" class="list_otel">
-				
-																																																																																																	</div>
-				<div class="colorText line_9"></div>
+						<div id="name_9_15" class="name_metro metro_line_9" style="font-size: 80%;">${Тульская}</div>
 		    </div>
 			<div id="point_9_16" id_metro="144" class="point_wrap noactiv_point" title="Нагатинская" style="border-width: 5px;">
-						<div id="name_9_16" class="name_metro metro_line_9" style="font-size: 80%;">Нагатинская</div>
-				
-				<div id="otel_9_16" class="list_otel">
-				
-																																		</div>
-				<div class="colorText line_9"></div>
+						<div id="name_9_16" class="name_metro metro_line_9" style="font-size: 80%;">${Нагатинская}</div>
 		    </div>
 			<div id="point_9_17" id_metro="146" class="point_wrap noactiv_point" title="Нахимовский проспект" style="border-width: 5px;">
-						<div id="name_9_17" class="name_metro metro_line_9" style="font-size: 80%;">Нахимовский<br>проспект</div>
-				
-				<div id="otel_9_17" class="list_otel">
-				
-													</div>
-				<div class="colorText line_9"></div>
+						<div id="name_9_17" class="name_metro metro_line_9" style="font-size: 80%;">${Нахимовский_проспект}</div>
 		    </div>
 			<div id="point_9_18" id_metro="145" class="point_wrap noactiv_point" title="Нагорная" style="border-width: 5px;">
-						<div id="name_9_18" class="name_metro metro_line_9" style="font-size: 80%;">Нагорная</div>
-				
-				<div id="otel_9_18" class="list_otel">
-				
-													</div>
-				<div class="colorText line_9"></div>
+						<div id="name_9_18" class="name_metro metro_line_9" style="font-size: 80%;">${Нагорная}</div>
 		    </div>
 			<div id="point_9_19" id_metro="147" class="point_wrap  line_9_circul noactiv_point" title="Севастопольская" style="border-width: 5px;">
-						<div id="name_9_19" class="name_metro metro_line_9" style="font-size: 80%;">Севастопольская</div>
-				
-				<div id="otel_9_19" class="list_otel">
-				
-																																																</div>
-				<div class="colorText line_9"></div>
+						<div id="name_9_19" class="name_metro metro_line_9" style="font-size: 80%;">${Севастопольская}</div>
 		    </div>
 			<div id="point_9_20" id_metro="148" class="point_wrap noactiv_point" title="Чертановская" style="border-width: 5px;">
-						<div id="name_9_20" class="name_metro metro_line_9" style="font-size: 80%;">Чертановская</div>
-				
-				<div id="otel_9_20" class="list_otel">
-				
-																				</div>
-				<div class="colorText line_9"></div>
+						<div id="name_9_20" class="name_metro metro_line_9" style="font-size: 80%;">${Чертановская}</div>
 		    </div>
 			<div id="point_9_21" id_metro="149" class="point_wrap noactiv_point" title="Южная" style="border-width: 5px;">
-						<div id="name_9_21" class="name_metro metro_line_9" style="font-size: 80%;">Южная</div>
-				
-				<div id="otel_9_21" class="list_otel">
-				
-																											</div>
-				<div class="colorText line_9"></div>
-		    </div>
+						<div id="name_9_21" class="name_metro metro_line_9" style="font-size: 80%;">${Южная}</div>
+		    </div>s
 			<div id="point_9_22" id_metro="150" class="point_wrap noactiv_point" title="Пражская" style="border-width: 5px;">
-						<div id="name_9_22" class="name_metro metro_line_9" style="font-size: 80%;">Пражская</div>
-				
-				<div id="otel_9_22" class="list_otel">
-				
-																																		</div>
-				<div class="colorText line_9"></div>
+						<div id="name_9_22" class="name_metro metro_line_9" style="font-size: 80%;">${Пражская}</div>
 		    </div>
 			<div id="point_9_23" id_metro="151" class="point_wrap noactiv_point" title="Улица Академика Янгеля" style="border-width: 5px;">
-						<div id="name_9_23" class="name_metro metro_line_9" style="font-size: 80%;">Улица<br>Академика&nbsp;Янгеля</div>
-				
-				<div id="otel_9_23" class="list_otel">
-				
-																				</div>
-				<div class="colorText line_9"></div>
+						<div id="name_9_23" class="name_metro metro_line_9" style="font-size: 80%;">${Улица_Академика_Янгеля}</div>
 		    </div>
 			<div id="point_9_24" id_metro="152" class="point_wrap noactiv_point" title="Аннино" style="border-width: 5px;">
-						<div id="name_9_24" class="name_metro metro_line_9" style="font-size: 80%;">Аннино</div>
-				
-				<div id="otel_9_24" class="list_otel">
-				
-																				</div>
-				<div class="colorText line_9"></div>
+						<div id="name_9_24" class="name_metro metro_line_9" style="font-size: 80%;">${Аннино}</div>
 		    </div>
 			<div id="point_9_25" id_metro="153" class="point_wrap  line_9_circul noactiv_point" title="Бульвар Дмитрия Донского" style="border-width: 5px;">
-				<div id="name_9_25" class="name_metro metro_line_9" style="font-size: 80%;">Бульвар<br>Дмитрия&nbsp;Донского</div>
-		    --></img>
+				<div id="name_9_25" class="name_metro metro_line_9" style="font-size: 80%;">${Бульвар_Дмитрия_Донского}</div>
+				</div>
+		   </img>
 	    </div>
 	</section>
 

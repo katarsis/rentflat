@@ -14,6 +14,14 @@
 	    <put-attribute name="menu" value="/WEB-INF/views/menu.jspx" />
 		<put-attribute name="body" value="/WEB-INF/views/administration/manage.jspx" />
 	</definition>
+	<definition extends="default" name="administration/users">
+	    <put-attribute name="menu" value="/WEB-INF/views/menu.jspx" />
+		<put-attribute name="body" value="/WEB-INF/views/administration/manage_users.jspx" />
+	</definition>
+	<definition extends="default" name="administration/roles">
+	    <put-attribute name="menu" value="/WEB-INF/views/menu.jspx" />
+		<put-attribute name="body" value="/WEB-INF/views/administration/manage_roles.jspx" />
+	</definition>
 	<definition extends="default" name="administration/refreshprice">
 	    <put-attribute name="menu" value="/WEB-INF/views/menu.jspx" />
 		<put-attribute name="body" value="/WEB-INF/views/administration/manage.jspx" />
