@@ -30,7 +30,7 @@
 		          		 <ul class="dropdown-menu">
 					      <li><a href="${pageContext.request.contextPath}/administration/users">User list</a></li>
 					      <li><a href="${pageContext.request.contextPath}/administration/roles">Role list</a></li>
-					      <li><a href="${pageContext.request.contextPath}/administration/profile">Edit profile</a></li>
+					      <li><a href="${pageContext.request.contextPath}/standart/profile/edit">Edit profile</a></li>
 					    </ul>
 				    </li>
 		        </security:authorize>	

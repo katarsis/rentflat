@@ -23,6 +23,8 @@ public class Role implements Serializable{
 	private Integer id;
 
 	private String role;
+	
+	private String description;
 
 	//bi-directional many-to-many association to User
 	@ManyToMany(mappedBy="roles")
@@ -53,6 +55,14 @@ public class Role implements Serializable{
 
 	public void setUsers(List<UserAccount> users) {
 		this.users = users;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 	@Override

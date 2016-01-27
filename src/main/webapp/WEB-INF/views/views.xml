@@ -18,6 +18,10 @@
 	    <put-attribute name="menu" value="/WEB-INF/views/menu.jspx" />
 		<put-attribute name="body" value="/WEB-INF/views/administration/manage_users.jspx" />
 	</definition>
+	<definition extends="default" name="standart/profile/edit">
+	    <put-attribute name="menu" value="/WEB-INF/views/menu.jspx" />
+		<put-attribute name="body" value="/WEB-INF/views/standart/edit_profile.jspx" />
+	</definition>
 	<definition extends="default" name="administration/roles">
 	    <put-attribute name="menu" value="/WEB-INF/views/menu.jspx" />
 		<put-attribute name="body" value="/WEB-INF/views/administration/manage_roles.jspx" />

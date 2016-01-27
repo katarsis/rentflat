@@ -10,4 +10,7 @@ public interface RoleRepository extends JpaRepository<Role, Integer>{
 
 	@Query("FROM Role where id = ?1")
 	Role getRoleById(int idRole);
+	
+	@Query("from Role where role =?1")
+	Role findRoleByName(String role);
 }
