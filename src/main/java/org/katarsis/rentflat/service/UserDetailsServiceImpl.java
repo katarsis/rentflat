@@ -19,7 +19,7 @@ public class UserDetailsServiceImpl implements UserDetailsService{
 	public UserDetails loadUserByUsername(String userName)
 			throws UsernameNotFoundException {
 		UserAccount userAccount = userAccountService.getUserAccountByName(userName);
-		if(userAccount==null)
+		if(userAccount==null||!userAccount.isEnabled())
 			throw new UsernameNotFoundException("No such user"+userName);
 		UserDetailsAdapter user =new UserDetailsAdapter(userAccount);
 		return user;

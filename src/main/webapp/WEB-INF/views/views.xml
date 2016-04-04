@@ -42,6 +42,10 @@
 	    <put-attribute name="menu" value="/WEB-INF/views/menu.jspx" />
 	    <put-attribute name="body" value="/WEB-INF/views/auth/registration.jspx"></put-attribute>
 	</definition>
+	<definition extends="default" name="registrationWait">
+	    <put-attribute name="menu" value="/WEB-INF/views/menu.jspx" />
+	    <put-attribute name="body" value="/WEB-INF/views/auth/registrationWait.jspx"></put-attribute>
+	</definition>
 	<definition extends="default" name="login">
 	    <put-attribute name="menu" value="/WEB-INF/views/menu.jspx" />
 	    <put-attribute name="body" value="/WEB-INF/views/auth/login.jspx"></put-attribute>
